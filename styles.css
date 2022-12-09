@@ -1,0 +1,51 @@
+/*RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+/*COLOR & FONTS*/
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 24px;
+    color: rgb(94, 94, 94);
+    line-height: 2px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    background-image: url(./fuji-small.jpg);
+    background-size: cover;
+    display: flex;
+    flex: 1;
+}
+
+.form-container {
+    background-color: rgb(187, 208, 255);
+    display: flex;
+    flex: 5;
+}
+
+@media all and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .image-container {
+        background-image: url(./fuji-full2.jpg);
+        background-size: cover;
+        min-width: 300px;
+        flex: 3;
+    }
+
+    .form-container {
+        flex: 7;
+    }
+}
