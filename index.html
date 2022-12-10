@@ -27,11 +27,28 @@
                 </p>
                 <p>You <em>know</em> you want to.</p>
             </div>
-            <form action="">
-                FORM
+            <form id="sign-up-form">
+                <h1>Let's do this!</h1>
+                <div class="form-row">
+                    <label for="fname">FIRST NAME</label>
+                    <input type="text" name="user_fname" id="fname">
+                </div>
+                <div class="form-row">
+                    <label for="lname">LAST NAME</label>
+                    <input type="text" name="user_lname" id="lname">
+                </div>
+                <div class="form-row">
+                    <label for="pass1">PASSWORD</label>
+                    <input type="password" name="user_pass" id="pass1">
+                </div>
+                <div class="form-row">
+                    <label for="pass2">CONFIRM PASSWORD</label>
+                    <input type="password" name="user_pass2" id="pass2">
+                </div>
             </form>
-            <div>
-                SUBMIT
+            <div class="submit">
+                <button type="submit" form="sign-up-form">Create Account</button>
+                <p>Already have an account? <a href="">Log in</a></p>
             </div>
         </div>
     </div>
