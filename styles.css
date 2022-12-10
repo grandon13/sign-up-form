@@ -1,51 +1,53 @@
-/*RESET*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100%;
+@font-face {
+    font-family: "odin-font";
+    src: url(./Norse-Bold.otf);
 }
 
-/*COLOR & FONTS*/
+html {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Helvetica, sans-serif;
+    background-color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
-    color: rgb(94, 94, 94);
-    line-height: 2px;
+    height: 100vh;
 }
 
 .container {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 .image-container {
+    flex: 1;
+    display: flex;
     background-image: url(./fuji-small.jpg);
     background-size: cover;
+    font-family: odin-font;
+    color: white;
+    font-size: max(60px, 8vh);
+    padding: 20px 0;
+}
+
+.banner {
+    flex: auto;
     display: flex;
-    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.4);
+    padding: 15px;
+}
+
+.banner > img {
+    height: max(80px, 13vh);
 }
 
 .form-container {
-    background-color: rgb(187, 208, 255);
-    display: flex;
     flex: 5;
-}
-
-@media all and (min-width: 768px) {
-    .container {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .image-container {
-        background-image: url(./fuji-full2.jpg);
-        background-size: cover;
-        min-width: 300px;
-        flex: 3;
-    }
-
-    .form-container {
-        flex: 7;
-    }
+    display: flex;
+    flex-direction: column;
 }
