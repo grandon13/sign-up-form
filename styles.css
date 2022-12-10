@@ -66,7 +66,6 @@ form {
     font-size: 15px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     box-shadow: 5px 5px 16px rgba(54, 117, 199, 0.432);
 }
 
@@ -74,30 +73,45 @@ form h1 {
     margin: 0;
 }
 
-.form-row {
+form .names, form .passwords {
     display: flex;
     flex-direction: column;
 }
 
-.form-row label {
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+
+.names label, .passwords label {
     margin-bottom: 5px;
 }
 
 .form-row input {
-    border: 1px solid rgb(6, 29, 56);
+    border: 1px solid rgb(59, 59, 59);
+    font-size: 18px;
+    padding: 5px 8px;
     border-radius: 5px;
-    height: 30px;
+}
+
+.form-row input:focus {
+    outline: none;
+    border: 2px solid rgb(20, 106, 235);
+    box-shadow: 0px 0px 5px rgb(20, 106, 235);
 }
 
 .submit button {
-    background-color: rgb(216, 125, 140);
+    background-color: rgb(219, 108, 126);
     color: white;
     font-size: 20px;
     font-weight: bold;
+    margin-top: 25px;
     padding: 20px 40px;
     border: 0;
     border-radius: 15px;
     box-shadow: 5px 5px 6px rgba(102, 75, 88, 0.795);
+    cursor: pointer;
 }
 
 .submit p {
@@ -108,4 +122,37 @@ p a {
     text-decoration: none;
     font-weight: bold;
     color: blue;
+}
+
+@media screen and (min-width: 700px) {
+
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .image-container {
+        flex: 2;
+        background-image: url(./fuji-full2.jpg);
+        align-items: center;
+    }
+
+    .form-container {
+        flex: 3;
+    }
+
+    .banner {
+        max-height: 25vh;
+        height: max(160px, 23vh);
+    }
+
+    form .names, form .passwords {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .form-row {
+        flex: 1;
+    }
+
 }
