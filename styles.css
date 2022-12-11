@@ -2,3 +2,44 @@
     font-family: "odin-font";
     src: url(./Norse-Bold.otf);
 }
+
+:root {
+    --logo-font-size: max(30px, 15px + 5vh);
+    --logo-size: max(50px, 20px + 10vh);
+}
+
+body {
+    background-color: rgb(227, 247, 255);
+    margin: 0;
+}
+
+/*Column for mobile screens, set to row for desktop*/
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Sets the banner and logo for mobile*/
+.image-container {
+    background-image: url(./fuji-small.jpg);
+    background-size: cover;
+    display: flex;
+    padding: calc(10px + 1.5vh) 0px;
+}
+
+.banner {
+    background-color: rgba(0, 0, 92, 0.4);
+    font-family: odin-font;
+    font-size: var(--logo-font-size);
+    color: white;
+    flex: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.banner img {
+    max-height: var(--logo-size);
+}
