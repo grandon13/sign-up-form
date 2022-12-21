@@ -6,18 +6,21 @@
 :root {
     --logo-font-size: max(30px, 15px + 5vh);
     --logo-size: max(50px, 20px + 10vh);
+    --form-padding: calc(20px + 3vw);
 }
 
 body {
     background-color: rgb(240, 251, 255);
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
 }
 
 /*Column for mobile screens, set to row for desktop*/
 .main-container {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
 /*IMAGE CONTAINER*/
@@ -26,6 +29,7 @@ body {
     background-image: url(./fuji-small.jpg);
     background-size: cover;
     display: flex;
+    flex-direction: column;
     padding: calc(10px + 1.5vh) 0px;
 }
 
@@ -36,10 +40,11 @@ body {
     color: white;
     flex: auto;
     display: flex;
+    width: 100%;
     gap: 10px;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 15px 0px;
 }
 
 .banner img {
@@ -54,14 +59,14 @@ body {
 
 /*Header*/
 .header {
-    padding: 30px;
+    padding: var(--form-padding);
     font-size: 22px;
     font-weight: bold;
 }
 
 /*Form*/
 form {
-    padding: 30px;
+    padding: var(--form-padding);
     background-color: rgb(194, 226, 255);
     display: flex;
     flex-direction: column;
@@ -78,10 +83,80 @@ form h1 {
 
 input {
     margin-bottom: 10px;
-    max-width: 230px;
+    max-width: calc(230px + 8vw);
+    padding: 4px;
+    border: 2px solid rgb(170, 170, 170);
+    border-radius: 4px;
+    outline: none;
 }
 
 .form-row {
     display: flex;
     flex-direction: column;
+}
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    padding: var(--form-padding);
+}
+
+button {
+    background-color: rgb(255, 101, 126);
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 5px 5px pink;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+div button :hover{
+    background-color: rgb(255, 38, 74);
+}
+
+.submit a {
+    text-decoration: none;
+    font-weight: bold;
+    color: blue;
+}
+
+@media screen and (min-width: 700px) {
+
+    .main-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .image-container {
+        flex: 2;
+        background-image: url(./fuji-full2.jpg);
+        align-items: center;
+    }
+
+    .form-container {
+        flex: 3;
+    }
+
+    .banner {
+        max-height: 25vh;
+        height: max(160px, 23vh);
+    }
+
+    form .names, form .passwords {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .form-row {
+        flex: 1;
+    }
+
+    .header, .submit, #sign-up-form {
+        flex: 1;
+    }
+
 }
